@@ -10,11 +10,10 @@ app.use(cors());
 app.use(express.json());
 
 const registrationRouter = require('./routes/registration');
-const loginRouter = require('./routes/login');
+// const loginRouter = require('./routes/login');
 
 app.use('/registration', registrationRouter);
-app.use('/login', loginRouter);
-
+// app.use('/login', loginRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
