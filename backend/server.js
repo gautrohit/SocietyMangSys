@@ -3,19 +3,18 @@ require('./db');
 const express = require('express');
 const cors = require('cors');
 
-require('dotenv').config();
-
 const app = express();
-const port = process.env.PORT || 2000;
+const port = process.env.PORT || 1200;
 
 app.use(cors());
 app.use(express.json());
 
-const exercisesRouter = require('./routes/exercises');
-const usersRouter = require('./routes/users');
+const registrationRouter = require('./routes/registration');
+const loginRouter = require('./routes/login');
 
-app.use('/exercises', exercisesRouter);
-app.use('/users', usersRouter);
+app.use('/registration', registrationRouter);
+app.use('/login', loginRouter);
+
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
